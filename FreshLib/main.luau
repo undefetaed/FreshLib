@@ -93,12 +93,13 @@ function FreshLib:Window(cfg)
 	TabContainer.BackgroundTransparency = 1
 	TabContainer.Parent = MainFrame
 
+	-- BURAYI DÜZELTTİM → GRI ARKA PLAN
 	local ContentArea = Instance.new("Frame")
 	ContentArea.Size = UDim2.new(0, 342, 0, 236)
 	ContentArea.Position = UDim2.new(0, 126, 0, 44)
-	ContentArea.BackgroundColor3 = Color3.fromRGB(95, 95, 95)
+	ContentArea.BackgroundColor3 = Color3.fromRGB(95, 95, 95)  -- GRİ YAPTIM
 	ContentArea.Parent = MainFrame
-	Instance.new("UICorner", ContentArea)
+	Instance.new("UICorner", ContentArea).CornerRadius = UDim.new(0, 8)
 
 	local Indicator = Instance.new("Frame")
 	Indicator.Size = UDim2.new(0, 108, 0, 28)
@@ -115,7 +116,7 @@ function FreshLib:Window(cfg)
 	function Library:NewTab(name)
 		local TabBtn = Instance.new("TextButton")
 		TabBtn.Size = UDim2.new(0, 108, 0, 28)
-		TabBtn.Position = UDim2.new(0, 0, 0, #TabsList * 34)
+		TabBtn.Position = UDim2.new(0, 0, 0, (#TabsList * 34))
 		TabBtn.BackgroundColor3 = Color3.fromRGB(95, 95, 95)
 		TabBtn.Text = name
 		TabBtn.TextColor3 = Color3.fromRGB(255,255,255)
@@ -160,7 +161,7 @@ function FreshLib:Window(cfg)
 			Frame.Size = UDim2.new(1, -16, 0, 38)
 			Frame.BackgroundColor3 = Color3.fromRGB(163, 163, 163)
 			Frame.Parent = Content
-			Instance.new("UICorner", Frame)
+			Instance.new("UICorner", Frame).CornerRadius = UDim.new(0, 8)
 
 			local Label = Instance.new("TextLabel", Frame)
 			Label.Size = UDim2.new(1, -8, 1, 0)
@@ -185,7 +186,7 @@ function FreshLib:Window(cfg)
 			Frame.Size = UDim2.new(1, -16, 0, 38)
 			Frame.BackgroundColor3 = Color3.fromRGB(163, 163, 163)
 			Frame.Parent = Content
-			Instance.new("UICorner", Frame)
+			Instance.new("UICorner", Frame).CornerRadius = UDim.new(0, 8)
 
 			local Label = Instance.new("TextLabel", Frame)
 			Label.Size = UDim2.new(0, 200, 1, 0)
@@ -225,7 +226,7 @@ function FreshLib:Window(cfg)
 			Btn.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold)
 			Btn.TextSize = 24
 			Btn.Parent = Content
-			Instance.new("UICorner", Btn)
+			Instance.new("UICorner", Btn).CornerRadius = UDim.new(0, 8)
 
 			Btn.MouseButton1Click:Connect(function()
 				TweenService:Create(Btn, TweenInfo.new(0.12), {BackgroundColor3 = Color3.fromRGB(120,120,120)}):Play()
